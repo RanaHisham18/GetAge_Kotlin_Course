@@ -12,12 +12,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val yearOfBirth = findViewById<EditText>(R.id.editText_YearOfBirth)
-        val age = findViewById<TextView>(R.id.textView_Age)
+        val ageTv = findViewById<TextView>(R.id.textView_Age)
         val calButton = findViewById<Button>(R.id.Button_Calculate)
 
-        val yOB = yearOfBirth.editableText.toString()
+
         calButton.setOnClickListener{
+            val yOB = yearOfBirth.editableText.toString()
             val age = 2022 - yOB.toInt()
+            ageTv.text = age.toString()
         }
     }
 }
